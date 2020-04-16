@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<link rel="stylesheet" type="text/css" href="MenuPage.css">
+	<link rel="stylesheet" type="text/css" href="CheckoutPage.css">
+	<script src="https://code.jquery.com/jquery-2.2.4.js" charset="utf-8"></script>
+	<title>Menu Page</title>
+</head>
+<body>
+		<div class="heading" align="center"><strong>Online Pizza Ordering</strong></div>
+		<header id="myHeader">
+			
+			<div class="logo"><img id="logo" src="logo2.jpg" alt="Logo" height="120" width="120"></div>
+			<div class="navbar">
+				<ul>
+	  			 <li><a href="HomePage.html">Home</a></li>
+	  			 <li><a  href="MenuPage.html">Our Menu</a></li>
+	  			 <li><a href="ContactUs.html">Contact Us</a></li>
+	  			 <li><a href="AboutUs.html">About Us</a></li>
+	  			 <li><a href="MenuPage.xml">Pizza Inventory</a></li>
+	  			 <button class="login_button" type="button" style="float: right;" id="LoginButton">LOGIN</button>
+	  			 <button class="checkout_button" type="button" style="float: right;" id="myButton">
+	  			 	<img src="shopping-cart.png" alt="Logo" height="30" width="30"></button>
+	  			 <script type="text/javascript">
+	    			document.getElementById("myButton").onclick = function () {
+	        			location.href = "CheckoutPage.html";
+	    			};
+	    			document.getElementById("LoginButton").onclick = function () {
+	        			location.href = "LoginPage.html";
+	    			};
+
+	    			window.onscroll = function() {myFunction()};
+
+					var header = document.getElementById("myHeader");
+					var sticky = header.offsetTop;
+
+					function myFunction() {
+					  if (window.pageYOffset > sticky) {
+					    header.classList.add("sticky");
+					  } else {
+					    header.classList.remove("sticky");
+					  }
+					}
+				</script>	
+				</ul>		
+		</div>
+		</header>
+
+    <div class="shopping-cart">
+      <!-- Title -->
+      <div class="title">
+        Shopping Cart
+      </div>
+
+      <!-- Product #1 -->
+      <div class="item">
+        <div class="buttons">
+          <span class="delete-btn"></span>
+          <span class="like-btn"></span>
+        </div>
+
+        <div class="image">
+          <img src="pepperoni.png" alt="" height="80" width="80"/>
+        </div>
+
+        <div class="description">
+          <span>Pepperoni</span>
+          <span></span>
+          <span>Non-veg</span>
+        </div>
+
+        <div class="quantity">
+          <button class="plus-btn" type="button" name="button">
+            <img src="plus.svg" alt="" />
+          </button>
+          <input type="text" name="name" value="1">
+          <button class="minus-btn" type="button" name="button">
+            <img src="minus.svg" alt="" />
+          </button>
+        </div>
+
+        <div class="total-price">Rs400</div>
+      </div>
+
+      <!-- Product #2 -->
+      <div class="item">
+        <div class="buttons">
+          <span class="delete-btn"></span>
+          <span class="like-btn"></span>
+        </div>
+
+        <div class="image">
+          <img src="onion_and_capsicum.png" alt="" height="80" width="80"/>
+        </div>
+
+        <div class="description">
+          <span>Onion and Capsicum</span>
+          <span></span>
+          <span>Veg</span>
+        </div>
+
+        <div class="quantity">
+          <button class="plus-btn" type="button" name="button">
+            <img src="plus.svg" alt="" />
+          </button>
+          <input type="text" name="name" value="1">
+          <button class="minus-btn" type="button" name="button">
+            <img src="minus.svg" alt="" />
+          </button>
+        </div>
+
+        <div class="total-price">Rs250</div>
+      </div>
+
+      <!-- Product #3 -->
+      <div class="item">
+        <div class="buttons">
+          <span class="delete-btn"></span>
+          <span class="like-btn"></span>
+        </div>
+
+        <div class="image">
+          <img src="margherita.png" alt="" height="80" width="80"/>
+        </div>
+
+        <div class="description">
+          <span>Margherita</span>
+          <span></span>
+          <span>Veg</span>
+        </div>
+
+        <div class="quantity">
+          <button class="plus-btn" type="button" name="button">
+            <img src="plus.svg" alt="" />
+          </button>
+          <input type="text" name="name" value="1">
+          <button class="minus-btn" type="button" name="button">
+            <img src="minus.svg" alt="" />
+          </button>
+        </div>
+
+        <div class="total-price">Rs200</div>
+      </div>
+    </div>
+   
+    <script type="text/javascript">
+      $('.minus-btn').on('click', function(e) {
+    		e.preventDefault();
+    		var $this = $(this);
+    		var $input = $this.closest('div').find('input');
+    		var value = parseInt($input.val());
+
+    		if (value > 1) {
+    			value = value - 1;
+    		} else {
+    			value = 0;
+    		}
+
+        $input.val(value);
+
+    	});
+
+    	$('.plus-btn').on('click', function(e) {
+    		e.preventDefault();
+    		var $this = $(this);
+    		var $input = $this.closest('div').find('input');
+    		var value = parseInt($input.val());
+
+    		if (value < 100) {
+      		value = value + 1;
+    		} else {
+    			value =100;
+    		}
+
+    		$input.val(value);
+    	});
+
+      $('.like-btn').on('click', function() {
+        $(this).toggleClass('is-active');
+      });
+    </script>
+		
+		<footer>
+			<div class="footerCell">
+				<p>Get to Know Us</p>
+				<ul>
+					<li><a href="HomePage.html">Home</a></li>
+					<li><a href="MenuPage.html">Our Menu</a></li>
+					<li><a href="ContactUs.html">Contact Us</a></li>
+					<li><a href="AboutUs.html">About Us</a></li>
+				</ul>
+			</div>
+			<div class="footerCell">
+				<p>Connect with Us</p>
+				<ul>
+					<li><a href="#">Facebook</a></li>
+					<li><a href="#">Instagram</a></li>
+					<li><a href="#">Twitter</a></li>
+				</ul>
+			</div>
+		</footer>
+</body>
+</html>

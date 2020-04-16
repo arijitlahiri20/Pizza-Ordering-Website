@@ -1,0 +1,115 @@
+<? 
+include("session.php")
+?>
+
+<!DOCTYPE html>
+<html>
+<head>
+	<link rel="stylesheet" type="text/css" href="MenuPage.css">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+	<title>Home Page</title>
+</head>
+<body>
+		<div class="heading" align="center"><strong>Online Pizza Ordering</strong></div>
+		<header id="myHeader">
+			
+			<div class="logo"><img id="logo" src="logo2.jpg" alt="Logo" height="120" width="120"></div>
+			<div class="navbar">
+				<ul>
+	  			 <li><a class="active" href="HomePage.html">Home</a></li>
+	  			 <li><a href="menu2.html">Our Menu</a></li>
+	  			 <li><a href="ContactUs.html">Contact Us</a></li>
+	  			 <li><a href="AboutUs.html">About Us</a></li>
+	  			 <li><a href="MenuPage.xml">Pizza Inventory</a></li>
+                   <button class="login_button" type="button" style="float: right;" id="LoginButton">
+                   LOGOUT
+                </button>
+	  			 <button class="checkout_button" type="button" style="float: right;" id="myButton">
+	  			 	<img src="shopping-cart.png" alt="Logo" height="30" width="30"></button>
+	  			 <script type="text/javascript">
+	    			document.getElementById("myButton").onclick = function () {
+	        			location.href = "CheckoutPage.html";
+	    			};
+	    			document.getElementById("LoginButton").onclick = function () {
+	        			location.href = "home.php";
+	    			};
+
+	    			window.onscroll = function() {myFunction()};
+
+					var header = document.getElementById("myHeader");
+					var sticky = header.offsetTop;
+
+					function myFunction() {
+					  if (window.pageYOffset > sticky) {
+					    header.classList.add("sticky");
+					  } else {
+					    header.classList.remove("sticky");
+					  }
+					}
+				</script>	
+				</ul>		
+		</div>
+		</header>
+        <div align="center"><h3>Welcome Admin</h3></div>
+		<div class="container">
+		   
+		  <div id="myCarousel" class="carousel slide" data-ride="carousel">
+		    <!-- Indicators -->
+		    <ol class="carousel-indicators">
+		      <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+		      <li data-target="#myCarousel" data-slide-to="1"></li>
+		      <li data-target="#myCarousel" data-slide-to="2"></li>
+		    </ol>
+
+		    <!-- Wrapper for slides -->
+		    <div class="carousel-inner">
+		      <div class="item active">
+		        <img src="offer1.jpg" alt="" style="width:100%; max-height: 400px;">
+		      </div>
+
+		      <div class="item">
+		        <img src="offer2.jpg" alt="" style="width:100%; max-height: 400px;">
+		      </div>
+		    
+		      <div class="item">
+		        <img src="offer3.jpg" alt="" style="width:100%; max-height: 400px;">
+		      </div>
+		    </div>
+
+		    <!-- Left and right controls -->
+		    <a class="left carousel-control" href="#myCarousel" data-slide="prev">
+		      <span class="glyphicon glyphicon-chevron-left"></span>
+		      <span class="sr-only">Previous</span>
+		    </a>
+		    <a class="right carousel-control" href="#myCarousel" data-slide="next">
+		      <span class="glyphicon glyphicon-chevron-right"></span>
+		      <span class="sr-only">Next</span>
+		    </a>
+		  </div>
+		</div>
+
+		 <br>
+
+		<footer>
+			<div class="footerCell">
+				<p>Get to Know Us</p>
+				<ul>
+					<li><a href="HomePage.html">Home</a></li>
+					<li><a href="MenuPage.html">Our Menu</a></li>
+					<li><a href="ContactUs.html">Contact Us</a></li>
+					<li><a href="AboutUs.html">About Us</a></li>
+				</ul>
+			</div>
+			<div class="footerCell">
+				<p>Connect with Us</p>
+				<ul>
+					<li><a href="#">Facebook</a></li>
+					<li><a href="#">Instagram</a></li>
+					<li><a href="#">Twitter</a></li>
+				</ul>
+			</div>
+		</footer>
+</body>
+</html>
